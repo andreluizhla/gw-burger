@@ -1,0 +1,74 @@
+body {
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.font-bebas {
+    font-family: "Bebas Neue", sans-serif;
+}
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+.burger-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    will-change: transform;
+}
+
+@media (hover: hover) {
+    .burger-card:hover {
+        transform: translateY(-8px);
+    }
+}
+
+.burger-card:active {
+    transform: scale(0.98);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ea580c;
+    transition: width 0.2s ease;
+    transform: translateX(-50%);
+}
+
+@media (hover: hover) {
+    .nav-link:hover::after {
+        width: 100%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+img {
+    content-visibility: auto;
+}
+
+@media (max-width: 640px) {
+    .burger-card {
+        transition: none;
+    }
+}
+
+@view-transition {
+    navigation: auto;
+}
