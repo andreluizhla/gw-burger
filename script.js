@@ -141,12 +141,12 @@ function sendWhatsAppOrder() {
     let message = "*PEDIDO GW BURGUER*%0A%0A";
 
     cart.forEach((item) => {
-        message += `${item.quantity}x ${item.name}`+
-        // `- R$ ${(item.price * item.quantity).toFixed(2)}`+
+        message += `${item.quantity}x ${item.name} `+
+        `- R$ ${(item.price * item.quantity).toFixed(2)}`+
         `%0A`;
     });
 
-    // message += `%0A*TOTAL: R$ ${calculateTotal().toFixed(2)}*`;
+    message += `%0A*TOTAL: R$ ${calculateTotal().toFixed(2)}*`;
 
     const whatsappUrl = `https://wa.me/5541995656839?text=${message}`;
     window.open(whatsappUrl, "_blank", "noopener noreferrer");
